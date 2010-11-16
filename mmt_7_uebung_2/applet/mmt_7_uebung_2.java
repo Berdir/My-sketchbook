@@ -1,5 +1,24 @@
+import processing.core.*; 
+import processing.xml.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
+
+public class mmt_7_uebung_2 extends PApplet {
+
 PImage img;
-void setup() {
+public void setup() {
   // draw() wird nur einmal aufgerufen
   noLoop();
   img = loadImage("lincoln.png");
@@ -7,7 +26,7 @@ void setup() {
   size(300, 200);
 }
 
-void draw() {
+public void draw() {
   image(img, 0, 0);
   
   PFont sans = loadFont("FreeSans-18.vlw");
@@ -42,10 +61,14 @@ void draw() {
       }
       
       // Calculate mean color and create rectangle
-      color mean = color((int)(mr / (steps * steps)), (int)(mg / (steps * steps)), (int)(mb / (steps * steps)));
+      int mean = color((int)(mr / (steps * steps)), (int)(mg / (steps * steps)), (int)(mb / (steps * steps)));
       fill(mean);
       rect(x + img.width * 2, y, steps, steps);
     }
   }
 }
 
+  static public void main(String args[]) {
+    PApplet.main(new String[] { "--bgcolor=#DFDFDF", "mmt_7_uebung_2" });
+  }
+}

@@ -22,7 +22,7 @@ int lh;
 PFont font;
 
 void setup() {
-  size(500, 800, OPENGL);
+  size(500, 600, OPENGL);
   hint(ENABLE_OPENGL_4X_SMOOTH);
   lh = height - 20;
   w = width / 2.0;
@@ -68,7 +68,6 @@ void draw() {
   if (h >= lh && hspeed > 0) {
     rstep *= -1;
     hspeed *= -.4;
-    System.out.println("bomp");
     if (hspeed > -1) {
       hspeed = 0;
       wspeed = 0;
